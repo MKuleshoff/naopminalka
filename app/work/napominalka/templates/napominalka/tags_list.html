@@ -1,0 +1,14 @@
+{% extends 'napominalka/base.html' %}
+
+
+{% block title %}
+    Tag list - {{ block.super  }}
+{% endblock %}
+
+{% block context %}
+    <h1 class="md-5">Tags:</h1>
+        {% for tag in tags %}
+            <h3><a href="{{ tag.get_absolute_url }}">{{ tag.title }}</a></h3>
+        {% endfor %}
+
+{% endblock %}

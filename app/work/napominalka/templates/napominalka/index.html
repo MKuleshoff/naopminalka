@@ -1,0 +1,15 @@
+{% extends 'napominalka/base.html' %}
+
+
+
+{% block title %}
+    Post List
+{% endblock %}
+
+
+
+{% block context %}
+    {% for post in posts %}
+        {% include 'napominalka/includes/post_card_template.html' %}
+    {% endfor %}
+{% endblock %}

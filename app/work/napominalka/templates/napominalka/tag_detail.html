@@ -1,0 +1,16 @@
+{% extends 'napominalka/base.html' %}
+
+{% block title %}
+    {{tag.title}} - {{ block.super }}
+{% endblock %}
+
+
+{% block context %}
+    <h1 class="md-5">Post with "{{tag.title|title}}" tag: </h1>
+
+        {% for post in tag.posts.all %}
+            {% include 'napominalka/includes/post_card_template.html' %}
+
+
+        {% endfor %}
+{% endblock %}
